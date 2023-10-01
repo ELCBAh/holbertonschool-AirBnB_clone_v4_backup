@@ -1,21 +1,44 @@
+<<<<<<< HEAD
 from uuid import uuid4
 from models import storage
 from models.state import State
+=======
+#!/usr/bin/python3
+""" Starts a Flash Web Application """
+from uuid import uuid4
+from models import storage
+from models.state import State
+from models.city import City
+>>>>>>> refs/remotes/origin/master
 from models.amenity import Amenity
 from models.place import Place
 from os import environ
 from flask import Flask, render_template
+<<<<<<< HEAD
 
 app = Flask(__name__)
+=======
+app = Flask(__name__)
+# app.jinja_env.trim_blocks = True
+# app.jinja_env.lstrip_blocks = True
+>>>>>>> refs/remotes/origin/master
 
 
 @app.teardown_appcontext
 def close_db(error):
+<<<<<<< HEAD
+=======
+    """ Remove the current SQLAlchemy Session """
+>>>>>>> refs/remotes/origin/master
     storage.close()
 
 
 @app.route('/3-hbnb/', strict_slashes=False)
 def hbnb():
+<<<<<<< HEAD
+=======
+    """ HBNB is alive! """
+>>>>>>> refs/remotes/origin/master
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
@@ -37,4 +60,8 @@ def hbnb():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+=======
+    """ Main Function """
+>>>>>>> refs/remotes/origin/master
     app.run(host='0.0.0.0', port=5000)
